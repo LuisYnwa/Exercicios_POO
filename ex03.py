@@ -22,7 +22,7 @@ class Retangulo:
 
 
 resultado = Retangulo(5, 10)
-resultado_area = resultado.calcula_area() #importante mandar a funcao para uma variavel para nao acabar  printando o indexx do objeto ao inves do resultado em si
+resultado_area = resultado.calcula_area() #importante mandar a funcao para uma variavel para nao acabar  printando o index do objeto ao inves do resultado em si
 resultado_perimetro = resultado.calcula_perimetro()
 print(f'Você precisará de {resultado_area} metros de pisos e {resultado_perimetro} metros de rodapé para construir o local')
 
