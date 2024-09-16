@@ -11,24 +11,39 @@ class TV:
             print('Nao sera possivel abaixar o volume pois a TV ja esta no mudo, tente aumenta-lo')
         else:
             self.volume -= quantidade_reduzida
-            return self.volume #tentar quantida-reduzida se nao der certo
+            return self.volume 
 
     def aumentar_volume(self, quantidade_aumentada):
-        if self.volume >= 100:
-            print('Nao sera possivel aumentar o volume pois a TV ja esta no no maximo, tente abaixa-lo')
+        if self.volume + quantidade_aumentada >= 100:
+            print('Nao sera possivel aumentar o volume pois o volume da TV passara do limite estipulado')
+            return self.volume
         else:
             self.volume += quantidade_aumentada
             return self.volume
         
-    #def mudar_canal(self, canal_mudado):
+    def mudar_canal(self, canal_mudado):
+        if canal_mudado > 5:
+            print('Esse codigo de canal nao esta disponivel em nossa rede!')
+            return self.canal
+        else:
+            self.canal = canal_mudado 
 
 
     
 teste_TV = TV(4)
 abaixa = teste_TV.abaixar_volume(30)
 print(f'Voce esta no canal {teste_TV.canal} e o volume da tv esta em {abaixa}%')
-aumenta = teste_TV.aumentar_volume(60)
+aumenta = teste_TV.aumentar_volume(160)
+mudanca_canal = teste_TV.mudar_canal(2)
 print(f'Voce esta no canal {teste_TV.canal} e o volume da tv esta em {aumenta}%')
-aumenta = teste_TV.aumentar_volume(60)
 print(f'Voce esta no canal {teste_TV.canal} e o volume da tv esta em {aumenta}%')
-abaixa = teste_TV.abaixar_volume(150)
+aumenta = teste_TV.aumentar_volume(50)
+print(f'Voce esta no canal {teste_TV.canal} e o volume da tv esta em {aumenta}%')
+mudanca_canal = teste_TV.mudar_canal(1)
+print(f'Voce esta no canal {teste_TV.canal} e o volume da tv esta em {aumenta}%')
+mudanca_canal = teste_TV.mudar_canal(8)
+print(f'Voce esta no canal {teste_TV.canal} e o volume da tv esta em {aumenta}%')
+
+
+
+
